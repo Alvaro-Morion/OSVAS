@@ -7,7 +7,7 @@ OSVAS_steps:
   - PREP
   - OFFLINE
  Expnames: #Don't forget a space before each item
-  - MEBREFOL
+  - MEBREFOL1
  Extract_model_sqlites: false
  Run_HARP: true
  Display_HARP: true
@@ -23,8 +23,8 @@ Station_metadata:
 Forcing_data:
   height_T: 2                       # Height of the temperature measurement
   height_V: 10                      # Height of the windspeed   measurement
-  run_start: '2018-01-01 00:00:00'    # Timestamp for the forcing start
-  run_end: '2020-12-31 23:59:00'      # Timestamp for the forcing end
+  run_start: '2017-12-01 00:00:00'    # Timestamp for the forcing start
+  run_end: '2018-12-31 23:59:00'      # Timestamp for the forcing end
   forcing_format: 'ascii'          # Choose between netcdf or ascii
   dataset1:
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_meteo_lc1_t10/versions/v1.0/files/
@@ -48,7 +48,7 @@ Forcing_data:
     
 Validation_data:
   validation_start: '2018-01-01 00:00:00'
-  validation_end: '2020-12-31 23:59:00'
+  validation_end: '2018-12-31 23:59:00'
   common_obstable: FALSE  # Write obs to a common obstable or to a single-station one
   dataset1: 
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_radiation_lc1_t10/versions/v1.0/files
@@ -75,31 +75,52 @@ Validation_data:
   dataset3:
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_soil_heat_lb1_t10/versions/v1.0/files
     timedelta: 10
+    type: profile #This type will interpolate the values of the observations to the levels of the model
     variables:
-      TS_1: TS00 #Which ones
-      TS_2: TS02
-      TS_3: TS04
-      TS_4: TS06
-      TS_5: TS08
+      TS_1: 0.01 # Model Variable : depth (m)
+      TS_2: 0.04
+      TS_3: 0.10
+      TS_4: 0.20
+      TS_5: 0.40
+      TS_6: 0.60
+    observations:
+      TS00: 0.00
+      TS02: 0.02
+      TS04: 0.04
+      TS06: 0.06
+      TS08: 0.08
+      TS12: 0.12
+      TS20: 0.20
+      TS30: 0.30
+      TS50: 0.50
     units:
       TS_1: degC
       TS_2: degC
       TS_3: degC
       TS_4: degC
       TS_5: degC
-#  dataset4: This data cannot be accessed
-#    doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_soil_water_lb1_t10/versions/v1.1/files
-#    timedelta: 10
-#    variables:
-#      SWC_1: SWC_1
-#      SWC_2: SWC_2
-#      SWC_3: SWC_3
-#      SWC_4: SWC_4
-#      SWC_5: SWC_5
-#    units:
-#      SWC_1: percent
-#      SWC_2: percent
-#      SWC_3: percent
-#      SWC_4: percent
-#      SWC_5: percent
+      TS_6: degC
+  
+  dataset4:
+    doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_soil_water_lb1_t10/versions/v1.1/files
+    timedelta: 10
+    type: profile
+    variables:
+      SWC_2: 0.04
+      SWC_3: 0.10
+      SWC_4: 0.20
+      SWC_5: 0.40
+      SWC_6: 0.60
+    observations:
+      TH05: 0.05
+      TH19: 0.19
+      TH33: 0.33
+      TH40: 0.40
+      TH56: 0.56
+    units:
+      SWC_2: percent
+      SWC_3: percent
+      SWC_4: percent
+      SWC_5: percent
+      SWC_6: percent
       
