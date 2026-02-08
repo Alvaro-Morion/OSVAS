@@ -118,9 +118,9 @@ Validation_data:
       TH40: 0.40
       TH56: 0.56
     units:
-      SWC_2: percent
-      SWC_3: percent
-      SWC_4: percent
-      SWC_5: percent
-      SWC_6: percent
+      SWC_2: m3/m3
+      SWC_3: m3/m3
+      SWC_4: m3/m3
+      SWC_5: m3/m3
+      SWC_6: m3/m3
       
