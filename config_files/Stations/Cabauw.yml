@@ -1,5 +1,5 @@
 OSVAS_steps:
- Create_forcing: false
+ Create_forcing: true
  Get_validation: false
  Run_surfex: false
  Surfex_steps: #Don't forget a space before each item
@@ -7,10 +7,10 @@ OSVAS_steps:
   - PREP
   - OFFLINE
  Expnames: #Don't forget a space before each item
-  - MEBREFOL1
+  - BASE_CABAUW
  Extract_model_sqlites: false
- Run_HARP: true
- Display_HARP: true
+ Run_HARP: false
+ Display_HARP: false
 
 Station_metadata:
   Station_name: Cabauw
@@ -21,11 +21,11 @@ Station_metadata:
   vegtype: 10
 
 Forcing_data:
-  height_T: 2                       # Height of the temperature measurement
-  height_V: 10                      # Height of the windspeed   measurement
-  run_start: '2017-12-01 00:00:00'    # Timestamp for the forcing start
+  height_T: 20                       # Height of the temperature measurement
+  height_V: 20                      # Height of the windspeed   measurement
+  run_start: '2017-11-01 00:00:00'    # Timestamp for the forcing start
   run_end: '2018-12-31 23:59:00'      # Timestamp for the forcing end
-  forcing_format: 'ascii'          # Choose between netcdf or ascii
+  forcing_format: 'netcdf'          # Choose between netcdf or ascii
   dataset1:
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_meteo_lc1_t10/versions/v1.0/files/
     timedelta: 10  # in minutes
@@ -34,10 +34,10 @@ Forcing_data:
       Forc_PS: P0, *100
       Forc_RAIN: RAIN, /(timedelta*60)
       Forc_SNOW: 
-      Forc_WIND: F010
-      Forc_DIR: D010      
-      Forc_QA: Q002, /1000 
-      Forc_TA: TA002
+      Forc_WIND: F020
+      Forc_DIR: D020      
+      Forc_QA: Q020, /1000 
+      Forc_TA: TA020
       Forc_DIR_SW: SWD
       Forc_SCA_SW:
   dataset2:
@@ -83,7 +83,7 @@ Validation_data:
       TS_4: 0.20
       TS_5: 0.40
       TS_6: 0.60
-    observations:
+    observations: #observaion variables: depth(m)
       TS00: 0.00
       TS02: 0.02
       TS04: 0.04

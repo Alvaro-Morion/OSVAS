@@ -246,50 +246,50 @@ params <- list(
       vc         = "pressure"
     ),
     H = list(
-      thresholds = c(seq(50, 300, 50	)),
+      #thresholds = c(seq(50, 300, 50	)),
       obsmin_val=-50,
       obsmin_val=500,
       error_sd   = 6
     ),
     LE = list(
-      thresholds = c(seq(50, 300, 50	)),
+      #thresholds = c(seq(50, 300, 50	)),
       obsmin_val=-50,
       obsmin_val=500,
       error_sd   = 6
     ),
    LW_OUT = list(
-      thresholds = c(seq(100, 800, 100	)),
+      #thresholds = c(seq(100, 800, 100	)),
       obsmin_val=-50,
       obsmin_val=800,
       error_sd   = 6
     ),
    LW_IN = list(
-      thresholds = c(seq(100, 500, 100	)),
+      #thresholds = c(seq(100, 500, 100	)),
       obsmin_val=-50,
       obsmin_val=500,
       error_sd   = 6
     ),
    SW_OUT = list(
-      thresholds = c(seq(50, 300, 50	)),
+      #thresholds = c(seq(50, 300, 50	)),
       obsmin_val=-20,
       obsmin_val=300,
       error_sd   = 6
     ),
    SW_IN = list(
-      thresholds = c(seq(100, 1100, 200	)),
+      #thresholds = c(seq(100, 1100, 200	)),
       obsmin_val=-50,
       obsmin_val=500,
       error_sd   = 6
     ),
     TS_1 = list(
-      thresholds = c(-20, -10, seq(-5, 25, 5)),
+      #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       obsmin_val = - 30,
       obsmax_val = + 50,
       error_sd   = 6
     ),    
     TS_2 = list(
-      thresholds = c(-20, -10, seq(-5, 25, 5)),
+      #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       scale_obs = list(scaling = 0, new_units = "degC"),            
       obsmin_val = - 30,
@@ -297,7 +297,7 @@ params <- list(
       error_sd   = 6
     ),    
     TS_3 = list(
-      thresholds = c(-20, -10, seq(-5, 25, 5)),
+      #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       scale_obs = list(scaling = 0, new_units = "degC"),            
       obsmin_val = - 30,
@@ -305,7 +305,7 @@ params <- list(
       error_sd   = 6
     ),    
     TS_4 = list(
-      thresholds = c(-20, -10, seq(-5, 25, 5)),
+      #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       scale_obs = list(scaling = 0, new_units = "degC"),            
       obsmin_val = - 30,
@@ -313,7 +313,7 @@ params <- list(
       error_sd   = 6
     ),    
     TS_5 = list(
-      thresholds = c(-20, -10, seq(-5, 25, 5)),
+      #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       scale_obs = list(scaling = 0, new_units = "degC"),            
       obsmin_val = - 30,
@@ -321,45 +321,45 @@ params <- list(
       error_sd   = 6
     ),        
     SWC_1 = list(
-      thresholds = c(seq(0.025, 1.1, 0.025)),    
+      #thresholds = c(seq(0.025, 1.1, 0.025)),    
       scale_fcst = list(scaling = 1, new_units = "m3/m3", mult = TRUE),
       scale_obs = list(scaling = 1, new_units = "m3/m3", mult = TRUE),      
       obsmin_val = 0,
-      obsmax_val = 1.1
+      obsmax_val = 1.0
     ),                
     SWC_2 = list(
-      thresholds = c(seq(0.025, 1.1, 0.025)),    
+      #thresholds = c(seq(0.025, 1.1, 0.025)),    
       scale_fcst = list(scaling = 1, new_units = "m3/m3", mult = TRUE),
       scale_obs = list(scaling = 1, new_units = "m3/m3", mult = TRUE),      
       obsmin_val = 0,
-      obsmax_val = 1.1
+      obsmax_val = 1.0
     ),                
     SWC_3 = list(
-      thresholds = c(seq(0.025, 1.1, 0.025)),    
+      #thresholds = c(seq(0.025, 1.1, 0.025)),    
       scale_fcst = list(scaling = 1, new_units = "m3/m3", mult = TRUE),
       scale_obs = list(scaling = 1, new_units = "m3/m3", mult = TRUE),      
       obsmin_val = 0,
-      obsmax_val = 1.1
+      obsmax_val = 1.0
     ),                
     SWC_4 = list(
-      thresholds = c(seq(0.025, 1.1, 0.025)),    
+      #thresholds = c(seq(0.025, 1.1, 0.025)),    
       scale_fcst = list(scaling = 1, new_units = "m3/m3", mult = TRUE),
       scale_obs = list(scaling = 1, new_units = "m3/m3", mult = TRUE),      
       obsmin_val = 0,
-      obsmax_val = 1.1
+      obsmax_val = 1.0
     ),             
     SWC_5 = list(
-      thresholds = c(seq(0.025, 1.1, 0.025)),    
+      #thresholds = c(seq(0.025, 1.1, 0.025)),    
       scale_fcst = list(scaling = 1, new_units = "m3/m3", mult = TRUE),
       scale_obs = list(scaling = 1, new_units = "m3/m3", mult = TRUE),      
       obsmin_val = 0,
-      obsmax_val = 1.1
+      obsmax_val = 1.0
     ),
     SWC_6 = list(
-      thresholds = c(seq(0.025, 1.1, 0.025)),    
+      #thresholds = c(seq(0.025, 1.1, 0.025)),    
       scale_fcst = list(scaling = 1, new_units = "m3/m3", mult = TRUE),
       scale_obs = list(scaling = 1, new_units = "m3/m3", mult = TRUE),      
       obsmin_val = 0,
-      obsmax_val = 1.1
+      obsmax_val = 1.0
     )
 )
