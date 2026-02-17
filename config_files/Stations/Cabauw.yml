@@ -1,13 +1,13 @@
 OSVAS_steps:
- Create_forcing: true
+ Create_forcing: false
  Get_validation: false
- Run_surfex: false
+ Run_surfex: true
  Surfex_steps: #Don't forget a space before each item
   - PGD
   - PREP
   - OFFLINE
  Expnames: #Don't forget a space before each item
-  - BASE_CABAUW
+  - BASECABAUW
  Extract_model_sqlites: false
  Run_HARP: false
  Display_HARP: false
@@ -34,17 +34,21 @@ Forcing_data:
       Forc_PS: P0, *100
       Forc_RAIN: RAIN, /(timedelta*60)
       Forc_SNOW: 
-      Forc_WIND: F020
-      Forc_DIR: D020      
-      Forc_QA: Q020, /1000 
-      Forc_TA: TA020
-      Forc_DIR_SW: SWD
-      Forc_SCA_SW:
   dataset2:
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_radiation_lc1_t10/versions/v1.0/files/
     timedelta: 10
     variables:
       Forc_LW: LWD
+      Forc_DIR_SW: SWD
+      Forc_SCA_SW:
+  dataset3: 
+    doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_tower_meteo_lb1_t10/versions/v1.2/files #Deprecated update to v1.3 when files are available
+    timedelta: 10
+    variables:
+      Forc_WIND: F
+      Forc_DIR: D      
+      Forc_QA: Q, /1000
+      Forc_TA: TA
     
 Validation_data:
   validation_start: '2018-01-01 00:00:00'
