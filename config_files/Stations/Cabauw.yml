@@ -1,7 +1,7 @@
 OSVAS_steps:
  Create_forcing: false
  Get_validation: false
- Run_surfex: true
+ Run_surfex: false
  Surfex_steps: #Don't forget a space before each item
   - PGD
   - PREP
@@ -9,8 +9,8 @@ OSVAS_steps:
  Expnames: #Don't forget a space before each item
   - BASECABAUW
  Extract_model_sqlites: false
- Run_HARP: false
- Display_HARP: false
+ Run_HARP: true
+ Display_HARP: true
 
 Station_metadata:
   Station_name: Cabauw
@@ -25,7 +25,7 @@ Forcing_data:
   height_V: 20                      # Height of the windspeed   measurement
   run_start: '2017-11-01 00:00:00'    # Timestamp for the forcing start
   run_end: '2018-12-31 23:59:00'      # Timestamp for the forcing end
-  forcing_format: 'netcdf'          # Choose between netcdf or ascii
+  forcing_format: 'ascii'          # Choose between netcdf or ascii
   dataset1:
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_meteo_lc1_t10/versions/v1.0/files/
     timedelta: 10  # in minutes
@@ -57,7 +57,7 @@ Validation_data:
   dataset1: 
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_radiation_lc1_t10/versions/v1.0/files
     timedelta: 10
-    variables: # Map Cesar variables (right) to a name (left) in the OBSTABLE
+    variables: # Map HARP variables (right) to a name (left) in the OBSTABLE
       SW_OUT: SWU
       LW_OUT: LWU
       SW_IN: SWD
@@ -127,4 +127,16 @@ Validation_data:
       SWC_4: m3/m3
       SWC_5: m3/m3
       SWC_6: m3/m3
+
+  dataset5:
+    doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_meteo_lc1_t10/versions/v1.0/files/
+    timedelta: 10
+    variables:
+      T2m: TA002
+      Q2m: Q002
+      S10m: F010
+    units:
+      T2m: K
+      Q2m: g/Kg
+      S10m: m/s
       

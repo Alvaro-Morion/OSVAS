@@ -20,11 +20,11 @@
 params <- list(
     # Surface parameters
     T2m = list(
-      thresholds = c(-20, -10, seq(-5, 25, 5)),
+      #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       scale_obs  = list(scaling = -273.15, new_units = "degC"),
-      obsmin_val = - 30,
-      obsmax_val = + 50,
+      obsmin_val = - 30 + 273.15, #It filters values before transforming.
+      obsmax_val = + 50 + 273.15, #It filters values before transforming.
       error_sd   = 6,
       models_to_scale = NULL
     ),
@@ -45,7 +45,7 @@ params <- list(
       error_sd   = 6
     ),
     Tmax = list(
-      thresholds = c(seq(0, 40, 5)),
+      #thresholds = c(seq(0, 40, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
       scale_obs  = list(scaling = -273.15, new_units = "degC"),
       obsmin_val = - 30,
@@ -60,11 +60,11 @@ params <- list(
     ),
     # Q2m typically in kg/kg in vobs/vfld files
     Q2m = list(
-      thresholds = c(1,2.5,5,7.5,10), # In g/Kg
+      #thresholds = c(1,2.5,5,7.5,10), # In g/Kg
       scale_fcst = list(scaling = 1000, new_units = "g/Kg", mult = TRUE),
-      scale_obs  = list(scaling = 1000, new_units = "g/Kg", mult = TRUE),
+      #scale_obs  = list(scaling = 1000, new_units = "g/Kg", mult = TRUE), #Already correct units
       obsmin_val = 0,
-      obsmax_val = 50/1000, # Need to divide by the scale factor as filtering is done before scaling
+      obsmax_val = 50,#/1000, # Need to divide by the scale factor as filtering is done before scaling
       error_sd   = 6
     ),
     Pmsl = list(
@@ -76,7 +76,7 @@ params <- list(
       use_models_to_scale = FALSE
     ),
     S10m = list(
-      thresholds = c(2.5,5,7.5,10,15,20,25,30),
+      #thresholds = c(2.5,5,7.5,10,15,20,25,30),
       scale_fcst = list(scaling = 0.0, new_units = "m/s"),
       scale_obs  = list(scaling = 0.0, new_units = "m/s"),
       obsmin_val = 0,
@@ -284,6 +284,7 @@ params <- list(
     TS_1 = list(
       #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
+      #scale_obs = list(scaling = -273.15, new_units = "degC"),
       obsmin_val = - 30,
       obsmax_val = + 50,
       error_sd   = 6
@@ -291,7 +292,7 @@ params <- list(
     TS_2 = list(
       #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
-      scale_obs = list(scaling = 0, new_units = "degC"),            
+      #scale_obs = list(scaling = -273.15, new_units = "degC"),           
       obsmin_val = - 30,
       obsmax_val = + 50,
       error_sd   = 6
@@ -299,7 +300,7 @@ params <- list(
     TS_3 = list(
       #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
-      scale_obs = list(scaling = 0, new_units = "degC"),            
+      #scale_obs = list(scaling = -273.15, new_units = "degC"),            
       obsmin_val = - 30,
       obsmax_val = + 50,
       error_sd   = 6
@@ -307,7 +308,7 @@ params <- list(
     TS_4 = list(
       #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
-      scale_obs = list(scaling = 0, new_units = "degC"),            
+      #scale_obs = list(scaling = -273.15, new_units = "degC"),           
       obsmin_val = - 30,
       obsmax_val = + 50,
       error_sd   = 6
@@ -315,7 +316,7 @@ params <- list(
     TS_5 = list(
       #thresholds = c(-20, -10, seq(-5, 25, 5)),
       scale_fcst = list(scaling = -273.15, new_units = "degC"),
-      scale_obs = list(scaling = 0, new_units = "degC"),            
+      #scale_obs = list(scaling = -273.15, new_units = "degC"),           
       obsmin_val = - 30,
       obsmax_val = + 50,
       error_sd   = 6

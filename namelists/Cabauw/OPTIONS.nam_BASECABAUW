@@ -206,9 +206,8 @@
                        XUNIF_LAI(10,10)      = 1.10,
                        XUNIF_LAI(10,11)      = 0.90,
                        XUNIF_LAI(10,12)      = 0.80,
-
-		       XUNIF_GROUND_DEPTH   = 2.5, 
-               XUNIF_ROOT_DEPTH     = 0.6, ! 2 or 1
+ 
+               XUNIF_ROOT_DEPTH     = 1.5, ! 2 or 1
 		       XUNIF_ROOT_LIN       = 0.05, 
 		       XUNIF_ROOT_EXTINCTION= 0.943, 
 
