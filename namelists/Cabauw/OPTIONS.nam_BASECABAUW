@@ -192,8 +192,6 @@
 
                 XUNIF_BSLAI(10)       = 0.0716,
 
-                XUNIF_LAI(10,1)       = 1.85,
-
                        XUNIF_LAI(10,1)       = 0.80,
                        XUNIF_LAI(10,2)       = 1.00,
                        XUNIF_LAI(10,3)       = 1.10,
