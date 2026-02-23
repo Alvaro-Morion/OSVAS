@@ -11,17 +11,17 @@
 &NAM_PREP_ISBA
                    ! Replace with CFILE_TG CFILE_WG
 
-                   ! CFILE_TG = 'tg.nc',
-                   ! CTYPE_TG = 'NETCDF',
+                   CFILE_TG = 'tg.nc',
+                   CTYPE_TG = 'NETCDF',
                    ! CFILE_HUG = 'wg.nc',
                    ! CTYPE_HUG = 'NETCDF'
 
                    XHUG_SURF = 0.47  , 
                    XHUG_ROOT = 0.27  , 
                    XHUG_DEEP = 0.60  , 
-                   XTG_SURF  = 277.00,
-                   XTG_ROOT  = 281.60,
-                   XTG_DEEP  = 286.65
+                   ! XTG_SURF  = 277.00,
+                   ! XTG_ROOT  = 281.60,
+                   ! XTG_DEEP  = 286.65
 /
 
 &NAM_ISBA              
