@@ -1,4 +1,5 @@
 RUNS/*
 forcings/*
+profiles/*
 .ipynb_checkpoints
 KMNI_token.txt

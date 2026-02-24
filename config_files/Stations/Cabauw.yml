@@ -1,16 +1,18 @@
 OSVAS_steps:
  Create_forcing: false
- Get_validation: false
- Run_surfex: false
+ Get_validation: true
+ Run_surfex: true
  Surfex_steps: #Don't forget a space before each item
   - PGD
   - PREP
+  - ./INIT
   - OFFLINE
  Expnames: #Don't forget a space before each item
   - BASECABAUW
- Extract_model_sqlites: false
- Run_HARP: true
- Display_HARP: true
+  #- BASENOINIT
+ Extract_model_sqlites:  true
+ Run_HARP: false
+ Display_HARP: false
 
 Station_metadata:
   Station_name: Cabauw
@@ -51,8 +53,8 @@ Forcing_data:
       Forc_TA: TA
     
 Validation_data:
-  validation_start: '2018-01-01 00:00:00'
-  validation_end: '2018-12-31 23:59:00'
+  validation_start: '2017-11-01 00:00:00'
+  validation_end: '2018-01-31 23:59:00'
   common_obstable: FALSE  # Write obs to a common obstable or to a single-station one
   dataset1: 
     doi: https://api.dataplatform.knmi.nl/open-data/v1/datasets/cesar_surface_radiation_lc1_t10/versions/v1.0/files

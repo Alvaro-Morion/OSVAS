@@ -148,9 +148,15 @@ if [[ "$Run_surfex" == true ]]; then
 	#link forcings in netcdf or txt format in execution folder
 	ln -s $OSVAS/forcings/$STATION_NAME/FORCING.nc $RUNDIR
 	ln -s $OSVAS/forcings/$STATION_NAME/*.txt $RUNDIR
-	#Copy namelist to execution folder
+	
+    #Copy namelist to execution folder
 	cp $OSVAS/namelists/$STATION_NAME/OPTIONS.nam_${EXPNAME} $RUNDIR/OPTIONS.nam
-	#Link physiographic files to execution folder
+    
+    #Copy script to modify prep file with initial conditions
+    cp $OSVAS/scripts/bash_scripts/modify_prep.sh $RUNDIR/INIT
+    chmod +x $RUNDIR/INIT
+	
+    #Link physiographic files to execution folder
 	for p in "$PARAMFILES" "$DIRFILES"; do
 	  ln -s "$p"/* "$RUNDIR"
 	done
@@ -180,7 +186,7 @@ if [[ "$Run_surfex" == true ]]; then
         for step in $SURFEX_STEPS; do
             echo "Running $step ..."
 	    echo $RUNDIR
-            $step || { echo "❌ Error running $step"; exit 1; }
+                    $step || { echo "❌ Error running $step"; exit 1; }
         done
 	#Move output files to the output folder of the experiment
 	mv PGD.nc $OUTDIR
